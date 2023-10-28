@@ -54,7 +54,7 @@ systemctl restart nfs-kernel-server
 ```
 
 ## Configure the client machine
-`3.91.5.200` = NFS server IP
+`54.147.55.174` = NFS server IP
 ```sh
 sudo apt update
 sudo apt install nfs-common -y
