@@ -11,21 +11,20 @@
 - Networking in docker, Docker Compose and Docker Swarm
 - Docker Art
 - Image scan (Security)
-
-All below Instructions in Dockerfile
-- FROM
-- ADD 
-- CMD 
-- ENTRYPOINT 
-- ENV 
-- EXPOSE 
-- MAINTAINER
-- RUN 
-- USER 
-- VOLUME 
-- WORKDIR 
-- LABEL
-- ARG
+- All below Instructions in Dockerfile
+    - FROM
+    - ADD 
+    - CMD 
+    - ENTRYPOINT 
+    - ENV 
+    - EXPOSE 
+    - MAINTAINER
+    - RUN 
+    - USER 
+    - VOLUME 
+    - WORKDIR 
+    - LABEL
+    - ARG
 
 
 ## Git and Gith
