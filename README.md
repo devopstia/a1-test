@@ -1,1 +1,11 @@
-# a1
+# a1-devops
+- devlarative pipeline Vs scripted pepeline
+- all jenkins environment variables
+- node pipeline example
+- Fonctions, move all stages and replace with functions
+- credentials
+- when condition
+- if, elif and else
+- and and or
+- labels
+- approval before deployment
