@@ -2,7 +2,7 @@ version: '3'
 services:
   sixfure-db:
     container_name: sixfure-db-container
-    image: devopseasylearning/sixfure-db:develop
+    image: devopseasylearning/sixfure-db:develop # Specify the desired image tag here
     ports:
       - "3306:3306"
     expose:
@@ -15,13 +15,10 @@ services:
     networks:
       - sixfure_bridge
     restart: always
-    volumes:
-      - ./db-data:/var/lib/mysql # Mount the local directory 'db-data' to /var/lib/mysql in the container
-    pull_policy: always
 
   sixfure-redis:
     container_name: sixfure-redis-container
-    image: devopseasylearning/sixfure-redis:develop
+    image: devopseasylearning/sixfure-redis:develop # Specify the desired image tag here
     ports:
       - "6379:6379"
     expose:
@@ -32,13 +29,10 @@ services:
     networks:
       - sixfure_bridge
     restart: always
-    volumes:
-      - ./redis-data:/data # Mount the local directory 'redis-data' to /data in the container
-    pull_policy: always
 
   sixfure-ui:
     container_name: sixfure-ui-container
-    image: devopseasylearning/sixfure-ui:develop
+    image: devopseasylearning/sixfure-ui:develop # Specify the desired image tag here
     ports:
       - "3000:3000"
     expose:
@@ -53,13 +47,12 @@ services:
     networks:
       - sixfure_bridge
     restart: always
-    pull_policy: always
     depends_on:
       - sixfure-auth
 
   sixfure-weather:
     container_name: sixfure-weather-container
-    image: devopseasylearning/sixfure-weather:develop
+    image: devopseasylearning/sixfure-weather:develop # Specify the desired image tag here
     ports:
       - "5000:5000"
     expose:
@@ -69,14 +62,13 @@ services:
     networks:
       - sixfure_bridge
     restart: always
-    pull_policy: always
     depends_on:
       - sixfure-db
       - sixfure-redis
 
   sixfure-auth:
     container_name: sixfure-auth-container
-    image: devopseasylearning/sixfure-auth:develop
+    image: devopseasylearning/sixfure-auth:develop # Specify the desired image tag here
     ports:
       - "8080:8080"
     environment:
@@ -87,7 +79,6 @@ services:
     expose:
       - "8080"
     restart: always
-    pull_policy: always
 
 networks:
   sixfure_bridge:
