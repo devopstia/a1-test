@@ -1,3 +1,11 @@
+## Repositories
+```
+devopseasylearning/sixfure-db:develop
+devopseasylearning/sixfure-redis:develop
+devopseasylearning/sixfure-ui:develop
+devopseasylearning/sixfure-weather:develop
+devopseasylearning/sixfure-auth:develop
+```
 
 ## Requirements
 - Use datadog to minitor containers
