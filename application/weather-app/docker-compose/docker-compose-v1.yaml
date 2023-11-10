@@ -1,8 +1,9 @@
 version: '3'
 services:
-  db:
+  sixfure-db:
     container_name: sixfure-db-container
     image: devopseasylearning/sixfure-db:develop # Specify the desired image tag here
+    hostname: db
     ports:
       - "3306:3306"
     expose:
@@ -72,7 +73,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_HOST: db
+      DB_HOST: sixfure-db
       DB_PASSWORD: my-secret-pw
     networks:
       - sixfure_bridge
