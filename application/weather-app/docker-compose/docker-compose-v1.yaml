@@ -88,3 +88,6 @@ services:
 networks:
   sixfure_bridge:
     driver: bridge
+volumes:
+  db-data:
+  redis-data:
