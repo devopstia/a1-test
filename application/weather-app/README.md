@@ -1,3 +1,6 @@
+a1\application\weather-app\auth\src\authdb\authdb.go
+
+
 ## Repositories
 ```
 devopseasylearning/sixfure-db:develop
@@ -6,6 +9,30 @@ devopseasylearning/sixfure-ui:develop
 devopseasylearning/sixfure-weather:develop
 devopseasylearning/sixfure-auth:develop
 ```
+
+## Create aws ECR repos
+aws ecr create-repository --repository-name aws-ecr-docker --region us-east-1
+aws ecr create-repository --repository-name <your-repo-name> --region <your-region>
+
+aws ecr create-repository --repository-name sixfure-db --region us-east-1
+aws ecr create-repository --repository-name sixfure-redis --region us-east-1
+aws ecr create-repository --repository-name sixfure-ui --region us-east-1
+aws ecr create-repository --repository-name sixfure-weather --region us-east-1
+aws ecr create-repository --repository-name sixfure-auth --region us-east-1
+
+## ECR URL
+788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-db:develop
+788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-redis:develop
+788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-ui:develop
+788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-weather:develop
+788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-auth:develop
+
+docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-db:develop . 
+docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-redis:develop . 
+docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-ui:develop .
+docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-weather:develop .
+docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-auth:develop .
+
 
 ## Requirements
 - Use datadog to minitor containers
