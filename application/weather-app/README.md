@@ -11,6 +11,7 @@ devopseasylearning/sixfure-auth:develop
 ```
 
 ## Create aws ECR repos
+```
 aws ecr create-repository --repository-name aws-ecr-docker --region us-east-1
 aws ecr create-repository --repository-name <your-repo-name> --region <your-region>
 
@@ -19,8 +20,11 @@ aws ecr create-repository --repository-name sixfure-redis --region us-east-1
 aws ecr create-repository --repository-name sixfure-ui --region us-east-1
 aws ecr create-repository --repository-name sixfure-weather --region us-east-1
 aws ecr create-repository --repository-name sixfure-auth --region us-east-1
+```
+
 
 ## ECR URL
+```
 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-db:develop
 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-redis:develop
 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-ui:develop
@@ -32,7 +36,25 @@ docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-redis:devel
 docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-ui:develop .
 docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-weather:develop .
 docker build -t 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-auth:develop .
+```
 
+
+## login into ecr
+```sh
+aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <ECR-REPOSITORY-URI>
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-db
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-redis
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-ui
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-weather
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 788210522308.dkr.ecr.us-east-1.amazonaws.com/sixfure-auth
+
+ 
+```
 
 ## Requirements
 - Use datadog to minitor containers
